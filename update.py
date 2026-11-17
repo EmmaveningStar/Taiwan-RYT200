@@ -131,6 +131,35 @@ def discover(key):
     return list(links.values()), warnings
 
 
+
+def google_approved_notes(feed_url):
+    parsed = urlsplit(feed_url)
+    if parsed.scheme != "https" or parsed.hostname != "script.google.com":
+        raise ValueError("核准回覆來源必須是 Google Apps Script HTTPS 網址")
+    payload = request_json(feed_url)
+    if not isinstance(payload, dict) or payload.get("version") != 1:
+        raise ValueError("核准回覆來源格式錯誤")
+    rows = payload.get("notes")
+    if not isinstance(rows, list):
+        raise ValueError("核准回覆來源缺少 notes")
+    notes = []
+    for row in rows:
+        if not isinstance(row, dict) or row.get("approved") is not True:
+            continue
+        body = str(row.get("body") or "").strip()
+        if not body:
+            continue
+        note = {
+            "title": str(row.get("title") or "讀者投稿")[:200],
+            "body": body[:10000],
+        }
+        source = str(row.get("url") or "").strip()
+        if urlsplit(source).scheme == "https" and urlsplit(source).hostname:
+            note["url"] = source
+        notes.append(note)
+    return notes
+
+
 def main():
     root = Path(__file__).resolve().parent
     path = root / "data.json"
@@ -178,6 +207,11 @@ def main():
 
         data["courses"] = courses
         data["community"] = notes
+
+    feed_url = os.environ.get("GOOGLE_APPROVED_FEED_URL")
+    if feed_url:
+        # Fail the deployment on a broken feed so approvals are never silently lost.
+        data["community"] = data.get("community", []) + google_approved_notes(feed_url)
 
     key = os.environ.get("BRAVE_SEARCH_API_KEY")
     if key:
