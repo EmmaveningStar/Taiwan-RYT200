@@ -50,6 +50,7 @@ jobs:
         run: python update.py
         env:
           GH_TOKEN: ${{ github.token }}
+          GOOGLE_APPROVED_FEED_URL: ${{ secrets.GOOGLE_APPROVED_FEED_URL }}
           BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
 
       - uses: actions/upload-artifact@v4
