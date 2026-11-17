@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>台灣瑜珈師培地圖｜RYT200</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f6ef;color:#202e26;font:16px/1.65 "Noto Sans TC",system-ui,sans-serif}main,nav{max-width:1040px;margin:auto;padding-inline:clamp(20px,5vw,54px)}header{background:#233a30;color:#f9f5ea}nav{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding-block:18px}header a{color:inherit}.hero{padding-block:55px 35px}h1{font-size:clamp(34px,7vw,65px);letter-spacing:-.045em;line-height:1.15;margin:0}.hero p{max-width:580px}.filters{display:flex;flex-wrap:wrap;gap:16px;padding-block:16px;border-bottom:1px solid #cecfc4}label{display:grid;gap:4px;flex:1;min-width:210px}input,select{font:inherit;padding:10px;border:1px solid #a6ada2;border-radius:8px;background:white;color:inherit}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:15px}.card{padding:20px;background:white;border:1px solid #daddd1;border-radius:13px}.card h3{margin:10px 0;line-height:1.4}a{color:#265744;text-underline-offset:4px}.tag{font-size:.85rem;color:#403817;background:#efe6c7;padding:3px 9px;border-radius:4px}footer{padding:32px 0}p{margin:.6em 0}small{color:#4f5e54}
+</style>
+<header><nav><strong>台灣瑜珈師培地圖</strong><a id="contribute" href="#community">提供課程或分享心得</a></nav></header>
+<main>
+<section class="hero"><h1>找一堂適合你的<br>RYT200 瑜珈師資培訓</h1><p>依縣市和關鍵字查看課程，從官方公告核對地址、班別和開課日期。</p></section>
+<section aria-label="課程篩選"><div class="filters"><label>縣市<select id="city"><option value="">所有縣市</option></select></label><label>關鍵字<input id="query" type="search" placeholder="例如：哈達、平日、松江"></label></div>
+<h2>課程列表</h2><p id="status" role="status">正在載入課程…</p><div class="cards" id="courses"></div></section>
+<section id="community"><h2>讀者分享</h2><p>歡迎補充新班別、資訊更正或親身上課心得。投稿使用 GitHub 帳號，提交內容會公開，請勿填寫聯絡資料。經審核後才會出現在這裡。</p><div class="cards" id="notes"></div></section>
+<footer><small id="checked"></small></footer>
+</main>
+<script type="module">
+const get = id => document.getElementById(id)
+const element = (tag, text) => Object.assign(document.createElement(tag), {textContent: text})
+const link = (label, url) => {
+  try { if (new URL(url).protocol === 'https:') return Object.assign(element('a', label), {href:url}) } catch {}
+  return element('span','來源待補')
+}
+const [repo] = location.pathname.split('/').filter(Boolean)
+if (location.hostname.endsWith('.github.io') && repo) {
+  get('contribute').href = 'https://github.com/' + location.hostname.split('.')[0] + '/' + encodeURIComponent(repo) + '/issues/new?template=submission.yml'
+}
+const normalize = value => value.toLowerCase().replaceAll('台','臺').replaceAll('瑜伽','瑜珈')
+try {
+  const response = await fetch('./data.json')
+  if (!response.ok) throw Error(response.status)
+  const data = await response.json()
+  for (const city of [...new Set(data.courses.map(course => course.city))].sort()) {
+    get('city').add(new Option(city,city))
+  }
+  function render() {
+    const query = normalize(get('query').value).trim().split(/\s+/)
+    const city = get('city').value
+    const courses = data.courses.filter(c => (!city || c.city === city) &&
+      query.every(term => normalize([c.name,c.city,c.place,c.schedule].join(' ')).includes(term)))
+    get('status').textContent = courses.length ? courses.length + ' 筆課程' : '找不到符合的課程。'
+    get('courses').replaceChildren(...courses.map(c => {
+      const card = element('article','')
+      card.className = 'card'
+      const tag = element('span',c.city)
+      tag.className = 'tag'
+      card.append(tag,element('h3',c.name),element('p',c.schedule),element('p',c.place),link('主辦單位公告', c.url))
+      return card
+    }))
+  }
+  get('city').addEventListener('change',render)
+  get('query').addEventListener('input',render)
+  render()
+  get('notes').replaceChildren(...(data.community.length ? data.community.map(note => {
+    const card = element('article','')
+    card.className = 'card'
+    card.append(element('h3',note.title),element('p',note.body),link('原始投稿',note.url))
+    return card
+  }) : [element('p','目前沒有已審核的投稿。')]))
+  get('checked').textContent = '首批課程核對日期 ' + data.checked + (data.refreshed ? '｜資料同步 ' + data.refreshed : '')
+} catch {
+  get('status').textContent = '課程資料暫時無法載入，請重新整理。'
+}
+</script>
+</html>
