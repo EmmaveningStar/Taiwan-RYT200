@@ -1,4 +1,153 @@
-{"checked":"2026-11-17","courses":[
-{"id":"michelle-2027","name":"Michelle Chu Yoga｜200 小時瑜珈師資培訓","city":"臺北市","place":"忠孝東路四段 319 號 4 樓之一","schedule":"2027/09/15–12/26 · 類週末班","url":"https://michellechuyoga.com/2027-ryt-200/"},
-{"id":"bodhi-2027","name":"葆體瑜珈｜RYT200 平日班","city":"臺北市","place":"松江路 59 號 3 樓","schedule":"2027/03/15–06/22 · 週一至週三，部分週次休息","url":"https://www.bodhiyoga.com.tw/hotnews/2025-ryt200/"},
-{"id":"lebest-2027","name":"印樂瑜珈｜古典哈達 RYT200 第 21 屆","city":"臺中市","place":"南屯區向心南路 752 號 2 樓","schedule":"2027 年平日班 · 確切日期待確認","url":"https://lebest.com.tw/product/200/"}],"community":[]}
+{
+  "checked": "2026-11-17",
+  "courses": [
+    {
+      "id": "michelle-2027",
+      "name": "Michelle Chu Yoga｜200 小時瑜珈師資培訓",
+      "city": "臺北市",
+      "place": "忠孝東路四段 319 號 4 樓之一",
+      "schedule": "2027/09/15–12/26 · 類週末班",
+      "url": "https://michellechuyoga.com/2027-ryt-200/",
+      "note": "可全程線上 LIVE 參與；實際出席與證書條件請向主辦確認。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "bodhi-2027",
+      "name": "葆體瑜珈｜RYT200 平日班",
+      "city": "臺北市",
+      "place": "松江路 59 號 3 樓",
+      "schedule": "2027/03/15–06/22 · 週一至週三，部分週次休息",
+      "url": "https://www.bodhiyoga.com.tw/hotnews/2025-ryt200/",
+      "note": "搜尋索引仍有班期公告，但原網址此次導向首頁；報名前請向主辦重新確認。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "lebest-2027-weekend-22",
+      "name": "印樂瑜珈｜古典哈達 RYT200 第22屆假日班",
+      "city": "臺中市",
+      "place": "南屯區向心南路752號2樓",
+      "schedule": "2027/01/01–03/01 · 指定假日，09:00–19:00",
+      "url": "https://lebest.com.tw/product/200/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "lebest-2027-tuesday-23",
+      "name": "印樂瑜珈｜古典哈達 RYT200 第23屆週二班",
+      "city": "臺中市",
+      "place": "南屯區向心南路752號2樓",
+      "schedule": "2027/01/05–05/18 · 指定週二，09:00–19:00",
+      "url": "https://lebest.com.tw/product/200/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "saurya-2027-weekend",
+      "name": "索莉雅太陽瑜珈｜Sujit 哈達 RYT200",
+      "city": "臺北市",
+      "place": "松江路192號6樓",
+      "schedule": "2027/04/03–06/06 · 指定週六日，08:00–18:00",
+      "url": "https://www.sujit-sauryayoga.com/ssy-class/2027ryt200/",
+      "note": "班期依2027課程表；費用段落仍有舊年份，收費請洽主辦。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "yogajourney-echo-2027",
+      "name": "瑜珈旅程｜Echo Kang 陰陽 RYT200 週末班",
+      "city": "臺北市",
+      "place": "大安區復興南路一段222號3樓（復興館）",
+      "schedule": "2027/03/06–05/16 · 週六日加04/30；04/03–04休息",
+      "url": "https://yogajourney.com.tw/certificate/echokang_ryt/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "siya-2026-winter",
+      "name": "SIYA YOGA｜200小時假日師資培訓",
+      "city": "臺北市",
+      "place": "中山區復興北路38號3樓",
+      "schedule": "2026/11/21–2027/01/31 · 假日班，英文授課／中文翻譯",
+      "url": "https://siyayoga.com/class/200%E5%B0%8F%E6%99%82%E7%91%9C%E7%8F%88%E5%B8%AB%E8%B3%87%E5%9F%B9%E8%A8%93%EF%BC%88%E5%86%AC%E5%AD%A3%E7%8F%AD%EF%BC%89-2026-11-21-1-31/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "jyoga-2027-weekend",
+      "name": "JYOGA樂活瑜珈｜第11屆流動瑜伽200小時假日班",
+      "city": "臺南市",
+      "place": "中西區府前路二段72號3樓（主辦教室；培訓場地請再確認）",
+      "schedule": "2027/02/13–06/13 · 週六日09:00–12:00、13:30–17:30",
+      "url": "https://www.jyoga.com.tw/14434",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "yogahouse-2027-spring",
+      "name": "Yoga House Institute｜RYT200 春季集訓",
+      "city": "臺東縣",
+      "place": "東海岸「山與海的對話生活營」；集合地址請洽主辦",
+      "schedule": "2027/03/13–03/28 · 16天集訓",
+      "url": "https://ouryogahouse.com/yogateachertrainingchinese.html",
+      "note": "採面談申請；主辦未在此公告列出詳細門牌。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "freshyoga-2027",
+      "name": "自然呼吸瑜珈館｜瑜珈之根 RYT200",
+      "city": "高雄市",
+      "place": "苓雅區光華一路35號3樓（主辦教室；培訓場地請再確認）",
+      "schedule": "2027年度課程 · 完整培訓日期請洽主辦",
+      "url": "https://freshyoga.com.tw/lesson_view.html?c=46211.6889583333-1479&fs=%EF%BF%BD%EF%BF%BD%EF%BF%BD%C9%AEv%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BDV%EF%BF%BD%D2%B5%7B&n=34",
+      "status": "日期待確認",
+      "note": "2026/10/17為已結束的說明會，不是培訓開課日。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "inspire-marcus-2026",
+      "name": "Inspire Yoga／悟瑜伽｜Marcus 相對能量流動 RYT200",
+      "city": "臺中市",
+      "place": "東興路三段381號4F-4（悟瑜伽）",
+      "schedule": "2026/11/07–2027/01/24 · 指定週六日",
+      "url": "https://inspireyoga.com.tw/teach_workshop/2026-marcus-%E7%9B%B8%E5%B0%8D%E8%83%BD%E9%87%8F%E6%B5%81%E5%8B%95%E7%91%9C%E4%BC%BD-ryt200/",
+      "status": "依公告已開課",
+      "note": "12/12、13、19、20休息；是否可插班請洽主辦。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "mindon-2026-2027",
+      "name": "Yoga Mindon｜新典範瑜珈 RYT200",
+      "city": "新北市",
+      "place": "中和區中安街210號2樓（Yoga Kafe）",
+      "schedule": "2026/09/17–2027/04/25",
+      "url": "https://yogatherapistjanustsai.blogspot.com/2026/04/2026-ryt-200-2026917.html",
+      "status": "已開課／原報名截止",
+      "note": "原公告報名截止2026/09/10；保留供課程比較，不代表仍接受報名。",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "wha-2027-tuesday",
+      "name": "昱驊瑜珈｜200HR大師陪跑班・週二班",
+      "city": "桃園市",
+      "place": "主辦在桃園；實際培訓館別請洽主辦，勿以分店地址推定",
+      "schedule": "2027/04/20起 · 週二10:00–15:00，40週",
+      "url": "https://www.whayoga.com/wtp/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "wha-2027-sunday",
+      "name": "昱驊瑜珈｜200HR大師陪跑班・週日班",
+      "city": "桃園市",
+      "place": "主辦在桃園；實際培訓館別請洽主辦，勿以分店地址推定",
+      "schedule": "2027/04/25起 · 週日10:00–15:00，40週",
+      "url": "https://www.whayoga.com/wtp/",
+      "checked": "2026-11-17"
+    },
+    {
+      "id": "wha-online",
+      "name": "昱驊瑜珈｜RYT200線上雙軌考照班",
+      "city": "線上課程",
+      "place": "線上教材＋視訊教學",
+      "schedule": "200小時線上教材＋50小時視訊；新班日期請洽主辦",
+      "url": "https://www.whayoga.com/ryt200-online/",
+      "status": "新班日期待確認",
+      "note": "頁面列出的月日未清楚標示年份，不當作2027新班日期。",
+      "checked": "2026-11-17"
+    }
+  ],
+  "community": []
+}
