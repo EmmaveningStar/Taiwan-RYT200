@@ -1,0 +1,45 @@
+name: 讀者投稿
+description: 補充課程、資訊更正或分享心得
+title: "[讀者投稿] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        投稿內容會公開，請勿填寫個人聯絡資料。
+        經維護者審核後才會顯示於網站。
+        新增課程請完整填寫課程資料；分享心得可只填投稿內容。
+
+  - type: textarea
+    id: content
+    attributes:
+      label: 投稿內容
+      description: 請分享心得、補充課程或說明需要更正的資訊。
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: 課程名稱
+
+  - type: input
+    id: city
+    attributes:
+      label: 縣市
+      placeholder: 例如：臺北市
+
+  - type: input
+    id: place
+    attributes:
+      label: 上課地點
+
+  - type: input
+    id: schedule
+    attributes:
+      label: 開課時間
+
+  - type: input
+    id: source
+    attributes:
+      label: 公開來源
+      description: 請填主辦單位的 HTTPS 公告網址。
