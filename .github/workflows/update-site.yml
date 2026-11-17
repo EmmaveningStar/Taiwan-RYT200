@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: 檢查投稿審核同步
+        run: python -m unittest discover -s tests -v
+
       - name: 修正資料路徑
         run: |
           python - <<'PY'
