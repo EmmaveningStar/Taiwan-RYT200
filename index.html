@@ -55,7 +55,7 @@ try {
   get('notes').replaceChildren(...(data.community.length ? data.community.map(note => {
     const card = element('article','')
     card.className = 'card'
-    card.append(element('h3',note.title),element('p',note.body),link('投稿連結',note.url))
+    card.append(element('h3',note.title),element('p',note.body),link('參考連結',note.url))
     return card
   }) : [element('p','目前沒有已審核的投稿。')]))
   get('checked').textContent = '課程資料最近核對 ' + data.checked + (data.refreshed ? '｜資料同步 ' + data.refreshed : '')
